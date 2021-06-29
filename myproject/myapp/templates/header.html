@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ideaton.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">오구오구</a>
+        </button>
+          <div >
+            <a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            <a href="#">질병검색</a>
+            <a href="{% url 'chat' %}">개인상담</a>
+            <a href="{% url 'hospital_review' %}">병원리뷰</a>
+            <a href="{% url 'medicine_review' %}">의약품리뷰</a>
+          </div>
+      </nav>
+
+      {% block content %}{% endblock %}
+</body>
+</html>

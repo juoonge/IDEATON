@@ -1,0 +1,10 @@
+<h2>Register New Post</h2>
+
+<form action="{%url 'hreview_create'%}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <p>병원명 <input type="text" name="hospital"></p> 
+    <p>작성자 <input type="text" name="nickname"></p> 
+    내용 <textarea name="body" id="" cols="30" rows="10"></textarea>
+    <p>사진 <input type="file" name="image"></p>
+    <button type="submit">등록</button>
+</form>

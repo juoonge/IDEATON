@@ -1,0 +1,29 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+    <input type="text" placeholder="검색어를 입력하세요."></input>
+    <button>검색</button>
+</div>
+<div>
+    <h1>해당 내용이 없습니다.</h1>
+</div>
+<hr class = 'line'> <!--선긋기-->
+<button>
+    <a href="{%url 'hreview_register' %}">병원 리뷰 등록</a>
+</button>
+<h2>최근 리뷰</h2>
+<div>
+    {%for review in hreview%}
+    <article>
+        <a href="{%url 'hreview_detail' review.id%}">
+            <p><img src="{{review.image.url}}" alt=""></p>
+            <h3>{{review.hospital}}</h3>
+        </a> 
+        <h5>{{review.nickname}}</h5>
+        <h5>{{review.date}}</h5>
+    </article>
+    {%endfor%}
+</div>
+{% endblock %}
